@@ -3,7 +3,7 @@ import db from '../db/dbservice.js';
 export async function getTasksByUserId(userId) {
     try {
         const result = await db.query(
-            `SELECT id, title, description
+            `SELECT id, user_id, title, description
             FROM tasks
             WHERE user_id = $1`,
             [userId]
