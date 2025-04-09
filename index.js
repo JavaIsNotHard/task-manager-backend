@@ -13,8 +13,12 @@ import registerRoutes from './src/routes/registerRoutes.js'
 
 import { authenticateJWT } from './src/auth/authMiddleware.js';
 
+const allowedOrigins = [
+    'http://localhost:5173',
+  ];
+
 app.use(cors({
-    origin: process.env.CORS_URL,
+    origin: allowedOrigins,
     credentials: true,
 }));
 
